@@ -1,0 +1,5 @@
+to expose
+
+
+$ kubectl expose deployment zap \
+--type NodePort --port 8080

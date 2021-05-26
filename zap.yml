@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zap-pod123
+  labels:
+    author: sandeep
+spec:
+  containers:
+    - name: zap-pod123
+      image: sandeepalguri/zap12
+      ports:
+       - containerPort: 8080
+         hostPort: 9090

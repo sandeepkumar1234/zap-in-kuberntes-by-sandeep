@@ -1,0 +1,36 @@
+first pull the docker image
+
+docker pull sandeepalguri/zap12
+
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zap
+  labels:
+    app: zap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zap
+  template:
+    metadata:
+      labels:
+        app: zap
+    spec:
+      containers:
+      - name: zap
+        image: sandeepalguri/zap12
+        ports:
+        - containerPort: 8080
+
+
+
+
+to expose
+
+
+$ kubectl expose deployment zap \
+--type NodePort --port 8080
